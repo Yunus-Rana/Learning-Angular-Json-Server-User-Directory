@@ -81,24 +81,6 @@
       "createdAt": "2026-03-05T18:10:00Z"
     },
     {
-      "name": "ABCD",
-      "username": "abccd",
-      "email": "abcd@example.com",
-      "role": "admin",
-      "status": "active",
-      "field": "Analytical Engine & Algorithms",
-      "id": "kHjyjlU5PRQ"
-    },
-    {
-      "name": "Test2",
-      "username": "t2",
-      "email": "t2@example.com",
-      "role": "user",
-      "status": "inactive",
-      "field": "test role",
-      "id": "UqJ6fvUXc44"
-    },
-    {
       "name": "Yunus Rana",
       "username": "yunuss",
       "email": "kingrmys@gmail.com",
@@ -107,6 +89,16 @@
       "field": "Software Engineering",
       "createdAt": "2026-10-08T10:02:14.429Z",
       "id": "sxg9oOtoW3Q"
+    },
+    {
+      "name": "Test Name",
+      "username": "test",
+      "email": "test@example.com",
+      "role": "member",
+      "status": "inactive",
+      "field": "a Test user",
+      "createdAt": "2026-10-08T10:24:43.492Z",
+      "id": "aEaBUrBsrYk"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -9,7 +9,17 @@
     <ul class="users-grid">
       @for (user of ($any(data).users ?? $any(data)); track user.id) {
         <li class="user-card">
-          <h2>{{ user.name }}</h2>
+          <div class="user-card-header">
+            <h2>{{ user.name }}</h2>
+            <button
+              type="button"
+              class="delete-button"
+              aria-label="Delete {{ user.name }}"
+              (click)="deleteUser(user)"
+            >
+              Delete
+            </button>
+          </div>
           <dl class="user-details">
             <div class="detail-row">
               <dt>Username</dt>
