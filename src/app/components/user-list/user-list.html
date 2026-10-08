@@ -1,8 +1,46 @@
-<h1>User Data</h1>
-<ul>
-    @for (user of ($any(usersData()).users ?? $any(usersData())); track user.id) {
-        <ul>
-            <li>{{user.name}}</li>
-        </ul>
-    }
-</ul>
+<main class="directory">
+  <header class="directory-header">
+    <p class="eyebrow">Team directory</p>
+    <h1>User Data</h1>
+    <p class="intro">A quick look at the people on your team.</p>
+  </header>
+
+  @if (usersData(); as data) {
+    <ul class="users-grid">
+      @for (user of ($any(data).users ?? $any(data)); track user.id) {
+        <li class="user-card">
+          <h2>{{ user.name }}</h2>
+          <dl class="user-details">
+            <div class="detail-row">
+              <dt>Username</dt>
+              <dd>{{ user.username }}</dd>
+            </div>
+            <div class="detail-row">
+              <dt>Email</dt>
+              <dd>{{ user.email }}</dd>
+            </div>
+            <div class="detail-row">
+              <dt>Role</dt>
+              <dd>{{ user.role }}</dd>
+            </div>
+            <div class="detail-row">
+              <dt>Status</dt>
+              <dd>
+                <span
+                  class="status"
+                  [class.status-active]="user.status === 'active'"
+                  [class.status-inactive]="user.status === 'inactive'"
+                >
+                  <span class="status-dot" aria-hidden="true"></span>
+                  {{ user.status }}
+                </span>
+              </dd>
+            </div>
+          </dl>
+        </li>
+      }
+    </ul>
+  } @else {
+    <p class="loading" role="status">Loading users…</p>
+  }
+</main>
