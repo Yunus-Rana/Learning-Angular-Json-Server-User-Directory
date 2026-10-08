@@ -1,69 +1,90 @@
 # Learning Angular: JSON Server User Directory
 
-A small Angular project for learning how to retrieve user records from a local REST API powered by JSON Server.
+A practical Angular learning project that demonstrates how to build a small team directory app with a local REST API. It shows how to fetch data from JSON Server, display it in the UI, and submit new user records using Angular forms and HTTP requests.
 
-## Built with
+## About
+
+This project is a simple user directory app for managing team members. The frontend is built with Angular, while the backend data is served locally through JSON Server. It is designed to help learn Angular fundamentals such as component structure, services, routing, reactive forms, and HTTP communication.
+
+## Features
+
+- View a list of users in a team directory layout
+- Fetch user data from a local JSON Server API
+- Add a new user with a validated Angular form
+- Display user details such as role, status, email, and expertise area
+- Learn Angular + REST API integration in a minimal project setup
+
+## Tech stack
 
 - Angular 22
 - TypeScript
+- RxJS
 - JSON Server
+- HTML + CSS
+
+## Project structure
+
+- `src/app` — Angular app components, routing, and services
+- `src/app/components/user-list` — user directory interface
+- `src/app/components/add-user` — form for adding a new user
+- `src/app/services` — HTTP service for API calls
+- `db.json` — mock data source for JSON Server
+
+## Requirements
+
+- Node.js
+- npm
 
 ## Getting started
 
-### Requirements
-
-- Node.js and npm
-
-### Install dependencies
-
-From the project directory, run:
+### 1. Install dependencies
 
 ```bash
 npm install
 ```
 
-JSON Server is already listed as a project dependency.
+### 2. Start the mock API
 
-### Start the mock API
-
-In one terminal, start JSON Server from the project root:
+From the project root, run:
 
 ```bash
 npx json-server db.json
 ```
 
-The users endpoint is available at <http://localhost:3000/users>.
+The mock API will be available at:
 
-### Start Angular
+- `http://localhost:3000/users`
 
-In a second terminal, start the Angular development server:
+### 3. Start the Angular app
+
+Open a second terminal and run:
 
 ```bash
 npm start
 ```
 
-Open <http://localhost:4200/> in your browser.
+Then open:
 
-Keep both servers running while using the application.
+- `http://localhost:4200/`
 
-## Data
+Keep both servers running while using the app.
 
-The mock database is [`db.json`](./db.json). Its `users` collection contains records with these fields:
+## Data model
+
+The mock database in [`db.json`](./db.json) contains a `users` collection with the following fields:
 
 | Field | Description |
 | --- | --- |
-| `id` | User identifier |
-| `name` | Display name |
+| `id` | Unique user ID |
+| `name` | Full name |
 | `username` | Username |
 | `email` | Email address |
-| `role` | `admin`, `lead`, or `member` |
-| `status` | `active` or `inactive` |
+| `role` | User role such as `admin`, `lead`, or `member` |
+| `status` | User status such as `active` or `inactive` |
 | `field` | Area of expertise |
 | `createdAt` | Creation timestamp |
 
-The Angular user service requests the collection from `http://localhost:3000/users`.
-
-## Other commands
+## Useful commands
 
 Build the project:
 
@@ -77,6 +98,10 @@ Run unit tests:
 npm test
 ```
 
+## License
+
+This project is intended for educational purposes.
+
 ## Git ignore
 
-The existing [`.gitignore`](./.gitignore) excludes dependencies, Angular build output, caches, and editor/system files. `db.json` is intentionally not ignored so the sample API data is available when the repository is cloned.
+The existing [`.gitignore`](./.gitignore) excludes dependencies, build output, editor settings, and cache files so the project stays clean and easy to clone.
