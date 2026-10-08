@@ -1,59 +1,82 @@
-# APIserver
+# Learning Angular: JSON Server User Directory
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.8.
+A small Angular project for learning how to retrieve user records from a local REST API powered by JSON Server.
 
-## Development server
+## Built with
 
-To start a local development server, run:
+- Angular 22
+- TypeScript
+- JSON Server
 
-```bash
-ng serve
-```
+## Getting started
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Requirements
 
-## Code scaffolding
+- Node.js and npm
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Install dependencies
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+From the project directory, run:
 
 ```bash
-ng generate --help
+npm install
 ```
 
-## Building
+JSON Server is already listed as a project dependency.
 
-To build the project run:
+### Start the mock API
+
+In one terminal, start JSON Server from the project root:
 
 ```bash
-ng build
+npx json-server db.json
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+The users endpoint is available at <http://localhost:3000/users>.
 
-## Running unit tests
+### Start Angular
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+In a second terminal, start the Angular development server:
 
 ```bash
-ng test
+npm start
 ```
 
-## Running end-to-end tests
+Open <http://localhost:4200/> in your browser.
 
-For end-to-end (e2e) testing, run:
+Keep both servers running while using the application.
+
+## Data
+
+The mock database is [`db.json`](./db.json). Its `users` collection contains records with these fields:
+
+| Field | Description |
+| --- | --- |
+| `id` | User identifier |
+| `name` | Display name |
+| `username` | Username |
+| `email` | Email address |
+| `role` | `admin`, `lead`, or `member` |
+| `status` | `active` or `inactive` |
+| `field` | Area of expertise |
+| `createdAt` | Creation timestamp |
+
+The Angular user service requests the collection from `http://localhost:3000/users`.
+
+## Other commands
+
+Build the project:
 
 ```bash
-ng e2e
+npm run build
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Run unit tests:
 
-## Additional Resources
+```bash
+npm test
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Git ignore
+
+The existing [`.gitignore`](./.gitignore) excludes dependencies, Angular build output, caches, and editor/system files. `db.json` is intentionally not ignored so the sample API data is available when the repository is cloned.

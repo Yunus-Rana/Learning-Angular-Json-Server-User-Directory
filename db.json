@@ -1,0 +1,84 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Ada Lovelace",
+      "username": "alovelace",
+      "email": "ada.lovelace@example.com",
+      "role": "admin",
+      "status": "active",
+      "field": "Analytical Engine & Algorithms",
+      "createdAt": "2026-01-15T08:30:00Z"
+    },
+    {
+      "id": 2,
+      "name": "Grace Hopper",
+      "username": "ghopper",
+      "email": "grace.hopper@example.com",
+      "role": "admin",
+      "status": "active",
+      "field": "Compilers & COBOL",
+      "createdAt": "2026-01-18T10:15:00Z"
+    },
+    {
+      "id": 3,
+      "name": "Alan Turing",
+      "username": "aturing",
+      "email": "alan.turing@example.com",
+      "role": "member",
+      "status": "active",
+      "field": "Theoretical Computer Science & Cryptanalysis",
+      "createdAt": "2026-02-01T12:00:00Z"
+    },
+    {
+      "id": 4,
+      "name": "Margaret Hamilton",
+      "username": "mhamilton",
+      "email": "margaret.hamilton@example.com",
+      "role": "lead",
+      "status": "active",
+      "field": "Software Engineering & Apollo Flight Guidance",
+      "createdAt": "2026-02-10T14:45:00Z"
+    },
+    {
+      "id": 5,
+      "name": "Claude Shannon",
+      "username": "cshannon",
+      "email": "claude.shannon@example.com",
+      "role": "member",
+      "status": "inactive",
+      "field": "Information Theory & Digital Logic",
+      "createdAt": "2026-02-14T09:20:00Z"
+    },
+    {
+      "id": 6,
+      "name": "Katherine Johnson",
+      "username": "kjohnson",
+      "email": "katherine.johnson@example.com",
+      "role": "member",
+      "status": "active",
+      "field": "Orbital Mechanics & Astrodynamics",
+      "createdAt": "2026-02-22T11:05:00Z"
+    },
+    {
+      "id": 7,
+      "name": "Dennis Ritchie",
+      "username": "dritchie",
+      "email": "dennis.ritchie@example.com",
+      "role": "lead",
+      "status": "active",
+      "field": "C Language & UNIX OS",
+      "createdAt": "2026-03-01T16:40:00Z"
+    },
+    {
+      "id": 8,
+      "name": "Linus Torvalds",
+      "username": "ltorvalds",
+      "email": "linus.torvalds@example.com",
+      "role": "member",
+      "status": "active",
+      "field": "Linux Kernel & Git",
+      "createdAt": "2026-03-05T18:10:00Z"
+    }
+  ]
+}

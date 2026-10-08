@@ -1,0 +1,8 @@
+<h1>User Data</h1>
+<ul>
+    @for (user of ($any(usersData()).users ?? $any(usersData())); track user.id) {
+        <ul>
+            <li>{{user.name}}</li>
+        </ul>
+    }
+</ul>
