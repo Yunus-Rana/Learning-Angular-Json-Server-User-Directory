@@ -1,1 +1,14 @@
-<app-user-list></app-user-list>
+<nav class="site-nav" aria-label="Main navigation">
+  <a
+    class="nav-link"
+    routerLink="/"
+    routerLinkActive="nav-link-active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    User list
+  </a>
+  <a class="nav-link" routerLink="/add" routerLinkActive="nav-link-active">
+    Add user
+  </a>
+</nav>
+<router-outlet></router-outlet>

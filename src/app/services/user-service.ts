@@ -6,7 +6,13 @@ import { User, UsersResponse } from './user-data-types';
 export class UserService {
     url = "http://localhost:3000/users"
     constructor(private http: HttpClient) {}
+
     getUsers(){
         return this.http.get<User[] | UsersResponse>(this.url)
     }
+
+    saveUsers(data: User){
+        return this.http.post<User>(this.url, data)
+    }
+
 }

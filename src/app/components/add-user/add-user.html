@@ -1,0 +1,109 @@
+<main class="form-page">
+  <header class="page-header">
+    <a class="back-link" routerLink="/">&#8592; Back to directory</a>
+    <p class="eyebrow">Team directory</p>
+    <h1>Add a user</h1>
+    <p class="intro">Add a new person to your team directory.</p>
+  </header>
+
+  <form class="user-form" [formGroup]="form" (ngSubmit)="addUser()" novalidate>
+    <div class="form-grid">
+      <div class="form-field">
+        <label for="name">Full name</label>
+        <input
+          id="name"
+          type="text"
+          formControlName="name"
+          placeholder="e.g. Ada Lovelace"
+          autocomplete="name"
+          [attr.aria-invalid]="form.controls.name.invalid && form.controls.name.touched"
+          aria-describedby="name-error"
+        />
+        @if (form.controls.name.invalid && form.controls.name.touched) {
+          <span class="field-error" id="name-error">Enter the user's name.</span>
+        }
+      </div>
+
+      <div class="form-field">
+        <label for="username">Username</label>
+        <input
+          id="username"
+          type="text"
+          formControlName="username"
+          placeholder="e.g. alovelace"
+          autocomplete="username"
+          [attr.aria-invalid]="form.controls.username.invalid && form.controls.username.touched"
+          aria-describedby="username-error"
+        />
+        @if (form.controls.username.invalid && form.controls.username.touched) {
+          <span class="field-error" id="username-error">Enter a username.</span>
+        }
+      </div>
+
+      <div class="form-field form-field-wide">
+        <label for="email">Email address</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          placeholder="name@example.com"
+          autocomplete="email"
+          [attr.aria-invalid]="form.controls.email.invalid && form.controls.email.touched"
+          aria-describedby="email-error"
+        />
+        @if (form.controls.email.invalid && form.controls.email.touched) {
+          <span class="field-error" id="email-error">
+            @if (form.controls.email.errors?.['required']) {
+              Enter an email address.
+            } @else {
+              Enter a valid email address.
+            }
+          </span>
+        }
+      </div>
+
+      <div class="form-field">
+        <label for="role">Role</label>
+        <select id="role" formControlName="role">
+          <option value="admin">Admin</option>
+          <option value="lead">Lead</option>
+          <option value="member">Member</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label for="status">Status</label>
+        <select id="status" formControlName="status">
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+        </select>
+      </div>
+
+      <div class="form-field form-field-wide">
+        <label for="field">Area of expertise</label>
+        <input
+          id="field"
+          type="text"
+          formControlName="field"
+          placeholder="e.g. Software engineering"
+          [attr.aria-invalid]="form.controls.field.invalid && form.controls.field.touched"
+          aria-describedby="field-error"
+        />
+        @if (form.controls.field.invalid && form.controls.field.touched) {
+          <span class="field-error" id="field-error">Enter an area of expertise.</span>
+        }
+      </div>
+    </div>
+
+    @if (errorMessage()) {
+      <p class="form-error" role="alert">{{ errorMessage() }}</p>
+    }
+
+    <div class="form-actions">
+      <a class="cancel-link" routerLink="/">Cancel</a>
+      <button class="submit-button" type="submit" [disabled]="isSaving()">
+        {{ isSaving() ? 'Saving…' : 'Add user' }}
+      </button>
+    </div>
+  </form>
+</main>
